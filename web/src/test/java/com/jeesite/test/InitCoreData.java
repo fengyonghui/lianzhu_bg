@@ -18,7 +18,7 @@ import com.jeesite.modules.Application;
 @ActiveProfiles("test")
 @SpringBootTest(classes=Application.class)
 @Rollback(false)
-public class InitCoreData extends com.jeesite.modules.sys.db.InitCoreData {
+public class InitCoreData extends com.lianzhu.modules.sys.db.InitCoreData {
 	
 	@Test
 	public void initCoreData() throws Exception{

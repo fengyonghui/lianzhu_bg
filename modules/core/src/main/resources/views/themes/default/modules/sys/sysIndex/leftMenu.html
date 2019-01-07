@@ -26,7 +26,7 @@
 		<% var menuSysCode = @ObjectUtils.toStringIgnoreNull(session.sysCode, 'default'); %>
 		<li class="header">${@DictUtils.getDictLabel('sys_menu_sys_code', menuSysCode, '')}</li>
 		<%-->*/%>
-		<% 
+		<%
 			var p = {parentCode: '0', firstMenu: true};
 			menu.tree(p);
 			print(p.html);
@@ -38,4 +38,5 @@
 		<li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>快捷菜单3</span></a></li>
 		<%-->*/%>
 	</ul>
+
 </section>
