@@ -122,7 +122,7 @@ import com.jeesite.common.mybatis.mapper.query.QueryType;
 				};
 				joinTables = joinTables + joinTable;
 			}
-			else if (c.attrType == 'com.jeesite.modules.sys.entity.Office'){
+			else if (c.attrType == 'com.lianzhu.modules.sys.entity.Office'){
 				var joinTable = {
 	%>
 		@JoinTable(type=Type.LEFT_JOIN, entity=Office.class, attrName="${c.simpleAttrName}", alias="u${cLP.index}",

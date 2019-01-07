@@ -3,47 +3,31 @@
  */
 package com.jeesite.common.utils.excel;
 
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.text.DecimalFormat;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
+import com.jeesite.common.utils.excel.annotation.ExcelField;
+import com.jeesite.common.utils.excel.annotation.ExcelFields;
+import com.lianzhu.common.callback.MethodCallback;
+import com.lianzhu.common.collect.ListUtils;
+import com.lianzhu.common.collect.SetUtils;
+import com.lianzhu.common.lang.DateUtils;
+import com.lianzhu.common.lang.ObjectUtils;
+import com.lianzhu.common.lang.StringUtils;
+import com.lianzhu.common.reflect.ReflectUtils;
+import com.jeesite.common.utils.excel.annotation.ExcelField.Type;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.formula.eval.ErrorEval;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellValue;
-import org.apache.poi.ss.usermodel.DateUtil;
-import org.apache.poi.ss.usermodel.FormulaEvaluator;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.jeesite.common.callback.MethodCallback;
-import com.jeesite.common.collect.ListUtils;
-import com.jeesite.common.collect.SetUtils;
-import com.jeesite.common.lang.DateUtils;
-import com.jeesite.common.lang.ObjectUtils;
-import com.jeesite.common.lang.StringUtils;
-import com.jeesite.common.reflect.ReflectUtils;
-import com.jeesite.common.utils.excel.annotation.ExcelField;
-import com.jeesite.common.utils.excel.annotation.ExcelField.Type;
-import com.jeesite.common.utils.excel.annotation.ExcelFields;
+import java.io.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.text.DecimalFormat;
+import java.util.*;
 
 /**
  * 导入Excel文件（支持“XLS”和“XLSX”格式）
@@ -178,7 +162,7 @@ public class ExcelImport implements Closeable {
 	public Workbook getWorkbook() {
 		return wb;
 	}
-	
+
 	/**
 	 * 设置当前工作表和标题行数
 	 * @author ThinkGem
@@ -229,7 +213,7 @@ public class ExcelImport implements Closeable {
 	public int getDataRowNum(){
 		return headerNum;
 	}
-	
+
 	/**
 	 * 获取最后一个数据行号
 	 * @return
@@ -238,7 +222,7 @@ public class ExcelImport implements Closeable {
 		//return this.sheet.getLastRowNum() + headerNum;
 		return this.sheet.getLastRowNum() + 1;
 	}
-	
+
 	/**
 	 * 获取最后一个列号
 	 * @return
@@ -247,7 +231,7 @@ public class ExcelImport implements Closeable {
 		Row row = this.getRow(headerNum);
 		return row == null ? 0 : row.getLastCellNum();
 	}
-	
+
 	/**
 	 * 获取单元格值
 	 * @param row 获取的行
@@ -311,7 +295,7 @@ public class ExcelImport implements Closeable {
 		}
 		return val;
 	}
-	
+
 	/**
 	 * 获取导入数据列表
 	 * @param cls 导入对象类型
@@ -320,7 +304,7 @@ public class ExcelImport implements Closeable {
 	public <E> List<E> getDataList(Class<E> cls, String... groups) throws InstantiationException, IllegalAccessException{
 		return getDataList(cls, false, groups);
 	}
-	
+
 	/**
 	 * 获取导入数据列表
 	 * @param cls 导入对象类型
@@ -349,7 +333,7 @@ public class ExcelImport implements Closeable {
 	 */
 	public <E> List<E> getDataList(Class<E> cls, MethodCallback exceptionCallback, String... groups) throws InstantiationException, IllegalAccessException{
 		List<Object[]> annotationList = ListUtils.newArrayList();
-		// Get annotation field 
+		// Get annotation field
 		Field[] fs = cls.getDeclaredFields();
 		for (Field f : fs){
 			ExcelFields efs = f.getAnnotation(ExcelFields.class);

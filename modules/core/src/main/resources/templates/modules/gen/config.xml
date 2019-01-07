@@ -48,7 +48,7 @@
 		<dict value="Double" label="Double"/>
 		<dict value="java.util.Date" label="Date"/>
 		<dict value="com.jeesite.modules.sys.entity.User" label="User"/>
-		<dict value="com.jeesite.modules.sys.entity.Office" label="Office"/>
+		<dict value="com.lianzhu.modules.sys.entity.Office" label="Office"/>
 		<dict value="This" label="This" description="生成当前对象"/>
 	</attrType>
 	<!-- 查询类型 -->
