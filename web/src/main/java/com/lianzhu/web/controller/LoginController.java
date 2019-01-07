@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2013-Now http://jeesite.com All rights reserved.
  */
-package com.lianzhu.modules.sys.web;
+package com.lianzhu.web.controller;
 
 import com.jeesite.common.config.Global;
 import com.jeesite.common.shiro.realm.BaseAuthorizingRealm;

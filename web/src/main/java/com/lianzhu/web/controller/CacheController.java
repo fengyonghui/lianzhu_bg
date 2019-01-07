@@ -1,4 +1,4 @@
-package com.lianzhu.modules.sys.web;
+package com.lianzhu.web.controller;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;

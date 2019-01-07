@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2013-Now http://jeesite.com All rights reserved.
  */
-package com.lianzhu.modules.sys.web;
+package com.lianzhu.web.controller;
 
 import com.jeesite.common.config.Global;
 import com.jeesite.common.idgen.IdGen;
@@ -12,7 +12,7 @@ import com.lianzhu.common.collect.MapUtils;
 import com.lianzhu.common.lang.StringUtils;
 import com.lianzhu.modules.sys.entity.Office;
 import com.lianzhu.modules.sys.service.OfficeService;
-import com.lianzhu.modules.sys.web.user.EmpUserController;
+import com.lianzhu.web.controller.user.EmpUserController;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

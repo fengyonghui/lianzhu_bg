@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2013-Now http://jeesite.com All rights reserved.
  */
-package com.lianzhu.modules.sys.web.user;
+package com.lianzhu.web.controller.user;
 
 import java.util.List;
 import java.util.Map;
@@ -30,7 +30,6 @@ import com.jeesite.common.entity.Page;
 import com.lianzhu.common.lang.StringUtils;
 import com.jeesite.common.mybatis.mapper.query.QueryType;
 import com.jeesite.common.web.BaseController;
-import com.lianzhu.modules.sys.entity.EmpUser;
 import com.jeesite.modules.sys.entity.Role;
 import com.jeesite.modules.sys.entity.User;
 import com.jeesite.modules.sys.service.RoleService;

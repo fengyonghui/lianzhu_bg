@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2013-Now http://jeesite.com All rights reserved.
  */
-package com.lianzhu.modules.sys.web.user;
+package com.lianzhu.web.controller.user;
 
 import java.util.List;
 import java.util.Map;
@@ -41,18 +41,11 @@ import com.lianzhu.common.mapper.JsonMapper;
 import com.jeesite.common.utils.excel.ExcelExport;
 import com.jeesite.common.utils.excel.annotation.ExcelField.Type;
 import com.jeesite.common.web.BaseController;
-import com.lianzhu.modules.sys.entity.EmpUser;
-import com.lianzhu.modules.sys.entity.Employee;
-import com.lianzhu.modules.sys.entity.Post;
 import com.jeesite.modules.sys.entity.Role;
 import com.jeesite.modules.sys.entity.User;
 import com.jeesite.modules.sys.entity.UserDataScope;
-import com.lianzhu.modules.sys.service.EmpUserService;
-import com.lianzhu.modules.sys.service.EmployeeService;
-import com.lianzhu.modules.sys.service.PostService;
 import com.jeesite.modules.sys.service.RoleService;
 import com.jeesite.modules.sys.service.UserService;
-import com.lianzhu.modules.sys.utils.EmpUtils;
 import com.jeesite.modules.sys.utils.UserUtils;
 
 /**

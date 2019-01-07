@@ -20,7 +20,7 @@
 	<properties>
 		
 		<finalName>web</finalName><!-- war包的名称 -->
-		<start-class>com.jeesite.modules.Application</start-class>
+		<start-class>com.lianzhu.web.Application</start-class>
 		
 		<!-- environment setting -->
 		<eclipse-plugin-download-sources>false</eclipse-plugin-download-sources>
