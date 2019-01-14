@@ -10,8 +10,6 @@ import com.lianzhu.modules.sys.utils.AreaUtils;
 import org.springframework.core.NamedThreadLocal;
 
 import com.lianzhu.common.lang.StringUtils;
-import com.lianzhu.modules.sys.entity.Area;
-import com.lianzhu.modules.sys.utils.AreaUtils;
 
 /**
  * 字段类型转换

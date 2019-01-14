@@ -1,0 +1,94 @@
+<% layout('/layouts/default.html', {title: 'biz_sku_info管理', libs: ['dataGrid']}){ %>
+<div class="main-content">
+	<div class="box box-main">
+		<div class="box-header">
+			<div class="box-title">
+				<i class="fa fa-list-alt"></i> ${text('biz_sku_info管理')}
+			</div>
+			<div class="box-tools pull-right">
+				<a href="#" class="btn btn-default" id="btnSearch" title="${text('查询')}"><i class="fa fa-filter"></i> ${text('查询')}</a>
+				<% if(hasPermi('biz:sku:bizSkuInfo:edit')){ %>
+					<a href="${ctx}/biz/sku/bizSkuInfo/form" class="btn btn-default btnTool" title="${text('新增biz_sku_info')}"><i class="fa fa-plus"></i> ${text('新增')}</a>
+				<% } %>
+			</div>
+		</div>
+		<div class="box-body">
+			<#form:form id="searchForm" model="${bizSkuInfo}" action="${ctx}/biz/sku/bizSkuInfo/listData" method="post" class="form-inline hide"
+					data-page-no="${parameter.pageNo}" data-page-size="${parameter.pageSize}" data-order-by="${parameter.orderBy}">
+				<div class="form-group">
+					<label class="control-label">${text('name')}：</label>
+					<div class="control-inline">
+						<#form:input path="name" maxlength="255" class="form-control width-120"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">${text('base_price')}：</label>
+					<div class="control-inline">
+						<#form:input path="basePrice" class="form-control width-120"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">${text('item_no')}：</label>
+					<div class="control-inline">
+						<#form:input path="itemNo" maxlength="11" class="form-control width-120"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">${text('img_url')}：</label>
+					<div class="control-inline">
+						<#form:input path="imgUrl" maxlength="255" class="form-control width-120"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label">${text('status')}：</label>
+					<div class="control-inline width-120">
+						<#form:select path="status" dictType="sys_search_status" blankOption="true" class="form-control"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-sm">${text('查询')}</button>
+					<button type="reset" class="btn btn-default btn-sm">${text('重置')}</button>
+				</div>
+			</#form:form>
+			<table id="dataGrid"></table>
+			<div id="dataGridPage"></div>
+		</div>
+	</div>
+</div>
+<% } %>
+<script>
+// 初始化DataGrid对象
+$('#dataGrid').dataGrid({
+	searchForm: $("#searchForm"),
+	columnModel: [
+		{header:'${text("name")}', name:'name', index:'a.name', width:150, align:"left", frozen:true, formatter: function(val, obj, row, act){
+			return '<a href="${ctx}/biz/sku/bizSkuInfo/form?id='+row.id+'" class="btnList" data-title="${text("编辑biz_sku_info")}">'+(val||row.id)+'</a>';
+		}},
+		{header:'${text("base_price")}', name:'basePrice', index:'a.base_price', width:150, align:"right", formatter: function(val, obj, row, act){
+			return js.formatNumber(val, 2, false, ''); // 数值类型格式化 (原始数值, 小数位数, 是否千分位, 默认值，金额情况下设置0.00);
+		}},
+		{header:'${text("item_no")}', name:'itemNo', index:'a.item_no', width:150, align:"center"},
+		{header:'${text("img_url")}', name:'imgUrl', index:'a.img_url', width:150, align:"left"},
+		{header:'${text("status")}', name:'status', index:'a.status', width:150, align:"center", formatter: function(val, obj, row, act){
+			return js.getDictLabel(${@DictUtils.getDictListJson('sys_search_status')}, val, '${text("未知")}', true);
+		}},
+		{header:'${text("create_id")}', name:'createBy', index:'a.create_id', width:150, align:"left"},
+		{header:'${text("create_time")}', name:'createDate', index:'a.create_time', width:150, align:"center"},
+		{header:'${text("u_version")}', name:'uVersion', index:'a.u_version', width:150, align:"center"},
+		{header:'${text("update_id")}', name:'updateBy.id', index:'a.update_id', width:150, align:"left"},
+		{header:'${text("update_time")}',  name:'updateDate', index:'a.update_time', width:150, align:"center"},
+		{header:'${text("操作")}', name:'actions', width:120, sortable:false, title:false, formatter: function(val, obj, row, act){
+			var actions = [];
+			<% if(hasPermi('biz:sku:bizSkuInfo:edit')){ %>
+				actions.push('<a href="${ctx}/biz/sku/bizSkuInfo/form?id='+row.id+'" class="btnList" title="${text("编辑biz_sku_info")}"><i class="fa fa-pencil"></i></a>&nbsp;');
+				actions.push('<a href="${ctx}/biz/sku/bizSkuInfo/delete?id='+row.id+'" class="btnList" title="${text("删除biz_sku_info")}" data-confirm="${text("确认要删除该biz_sku_info吗？")}"><i class="fa fa-trash-o"></i></a>&nbsp;');
+			<% } %>
+			return actions.join('');
+		}}
+	],
+	// 加载成功后执行事件
+	ajaxSuccess: function(data){
+		
+	}
+});
+</script>

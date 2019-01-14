@@ -10,8 +10,6 @@ import com.lianzhu.modules.sys.utils.EmpUtils;
 import org.springframework.core.NamedThreadLocal;
 
 import com.lianzhu.common.lang.StringUtils;
-import com.lianzhu.modules.sys.entity.Office;
-import com.lianzhu.modules.sys.utils.EmpUtils;
 
 /**
  * 字段类型转换

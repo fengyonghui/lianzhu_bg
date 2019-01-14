@@ -12,8 +12,6 @@ import org.springframework.core.NamedThreadLocal;
 import com.lianzhu.common.collect.ListUtils;
 import com.lianzhu.common.lang.StringUtils;
 import com.jeesite.common.utils.SpringUtils;
-import com.lianzhu.modules.sys.entity.Post;
-import com.lianzhu.modules.sys.service.PostService;
 
 /**
  * 字段类型转换
