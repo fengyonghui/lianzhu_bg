@@ -1,4 +1,5 @@
 <% layout('/layouts/default.html', {title: 'biz_sku_info管理', libs: ['dataGrid']}){ %>
+
 <div class="main-content">
 	<div class="box box-main">
 		<div class="box-header">
@@ -75,7 +76,7 @@ $('#dataGrid').dataGrid({
 		{header:'${text("create_id")}', name:'createBy', index:'a.create_id', width:150, align:"left"},
 		{header:'${text("create_time")}', name:'createDate', index:'a.create_time', width:150, align:"center"},
 		{header:'${text("u_version")}', name:'uVersion', index:'a.u_version', width:150, align:"center"},
-		{header:'${text("update_id")}', name:'updateBy.id', index:'a.update_id', width:150, align:"left"},
+		{header:'${text("update_id")}', name:'updateBy', index:'a.update_id', width:150, align:"left"},
 		{header:'${text("update_time")}',  name:'updateDate', index:'a.update_time', width:150, align:"center"},
 		{header:'${text("操作")}', name:'actions', width:120, sortable:false, title:false, formatter: function(val, obj, row, act){
 			var actions = [];

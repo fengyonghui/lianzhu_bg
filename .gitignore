@@ -1,6 +1,6 @@
 *.class
 **/target
-**/webapp/userfiles
+**/webapp/userfiles3
 **/WEB-INF/classes
 **/logs/*.log*
 *.epoch

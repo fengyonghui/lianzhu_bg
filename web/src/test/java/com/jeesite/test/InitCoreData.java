@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 
-import com.lianzhu.web.Application;
+import com.baimeng.web.Application;
 
 /**
  * 初始化核心表数据
@@ -18,7 +18,7 @@ import com.lianzhu.web.Application;
 @ActiveProfiles("test")
 @SpringBootTest(classes=Application.class)
 @Rollback(false)
-public class InitCoreData extends com.lianzhu.modules.sys.db.InitCoreData {
+public class InitCoreData extends com.baimeng.modules.sys.db.InitCoreData {
 	
 	@Test
 	public void initCoreData() throws Exception{

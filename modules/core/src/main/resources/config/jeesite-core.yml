@@ -49,7 +49,7 @@ jdbc:
     enabled: false
 
   # 表名前缀
-  tablePrefix: lz_
+  tablePrefix: bm_
 
 #======================================#
 #========== Spring settings ===========#
@@ -163,7 +163,7 @@ role:
     {
       3: {
         Office: {
-          ctrlTypeClass: "com.lianzhu.modules.sys.entity.Office",
+          ctrlTypeClass: "com.baimeng.modules.sys.entity.Office",
           ctrlDataAttrName: "currentUser.refObj.office.officeCode",
           ctrlDataParentCodesAttrName: "currentUser.refObj.office.parentCodes"
         },
@@ -176,19 +176,19 @@ role:
           ctrlTypeClass: "NONE"
         },
         Company: {
-          ctrlTypeClass: "com.lianzhu.modules.sys.entity.Company",
+          ctrlTypeClass: "com.baimeng.modules.sys.entity.Company",
           ctrlDataAttrName: "currentUser.refObj.company.companyCode",
           ctrlDataParentCodesAttrName: "currentUser.refObj.company.parentCodes"
         }
       },
       5: {
         Office: {
-          ctrlTypeClass: "com.lianzhu.modules.sys.entity.Office",
+          ctrlTypeClass: "com.baimeng.modules.sys.entity.Office",
           ctrlDataAttrName: "currentUser.refObj.office.officeCode",
           ctrlDataParentCodesAttrName: "currentUser.refObj.office.parentCodes"
         },
         Company: {
-          ctrlTypeClass: "com.lianzhu.modules.sys.entity.Company",
+          ctrlTypeClass: "com.baimeng.modules.sys.entity.Company",
           ctrlDataAttrName: "currentUser.refObj.company.companyCode",
           ctrlDataParentCodesAttrName: "currentUser.refObj.company.parentCodes"
         }
@@ -389,7 +389,7 @@ session:
 mybatis:
 
   # @MyBatisDao、Aliases 扫描基础包，如果多个，用“,”分隔
-  scanBasePackage: com.jeesite.modules,com.lianzhu.modules
+  scanBasePackage: com.jeesite.modules,com.baimeng.modules
   
   # TypeHandlers 扫描基础包，如果多个，用“,”分隔
   scanTypeHandlersPackage: ~
@@ -470,8 +470,8 @@ error:
 file:
   enabled: true
 
-  # 文件上传根路径，设置路径中不允许包含“userfiles”，在指定目录中系统会自动创建userfiles目录，如果不设置默认为contextPath路径
-#  baseDir: D:/jeesite
+  # 文件上传根路径，设置路径中不允许包含“userfiles333”，在指定目录中系统会自动创建userfiles目录，如果不设置默认为contextPath路径
+  baseDir: D:/jeesite
 
   # 上传文件的相对路径（支持：yyyy, MM, dd, HH, mm, ss, E）
   uploadPath: '{yyyy}{MM}/'

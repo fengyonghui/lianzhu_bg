@@ -29,9 +29,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jeesite.common.config.Global;
 <% if(table.isTreeEntity){ %>
-import com.lianzhu.common.collect.ListUtils;
-import com.lianzhu.common.collect.MapUtils;
-import com.lianzhu.common.lang.StringUtils;
+import com.baimeng.common.collect.ListUtils;
+import com.baimeng.common.collect.MapUtils;
+import com.baimeng.common.lang.StringUtils;
 import com.jeesite.common.idgen.IdGen;
 import com.jeesite.modules.sys.utils.UserUtils;
 <% }else{ %>

@@ -4,17 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>com.lianzhu</groupId>
-		<artifactId>lianzhu-parent</artifactId>
+		<groupId>com.baimeng</groupId>
+		<artifactId>baimeng-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 	
-	<artifactId>lianzhu-common</artifactId>
+	<artifactId>baimeng-common</artifactId>
 	<packaging>jar</packaging>
 	
-	<name>Lianzhu Common</name>
-	<url>http://lianzhu.com</url>
+	<name>Baimeng Common</name>
+	<url>http://baimeng.com</url>
 	<inceptionYear>2013-Now</inceptionYear>
 	
 	<properties>

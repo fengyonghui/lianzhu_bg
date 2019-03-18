@@ -1,4 +1,4 @@
-<% layout('/layouts/default.html', {title: 'biz_sku_info管理', libs: ['validate']}){ %>
+<% layout('/layouts/default.html', {title: 'biz_sku_info管理', libs: ['validate','fileupload']}){ %>
 <div class="main-content">
 	<div class="box box-main">
 		<div class="box-header with-border">
@@ -48,27 +48,8 @@
 							<label class="control-label col-sm-4" title="">
 								<span class="required hide">*</span> ${text('img_url')}：<i class="fa icon-question hide"></i></label>
 							<div class="col-sm-8">
-								<#form:input path="imgUrl" maxlength="255" class="form-control"/>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-6">
-						<div class="form-group">
-							<label class="control-label col-sm-4" title="">
-								<span class="required ">*</span> ${text('create_id')}：<i class="fa icon-question hide"></i></label>
-							<div class="col-sm-8">
-								<#form:input path="createBy.id" maxlength="11" class="form-control required digits"/>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-6">
-						<div class="form-group">
-							<label class="control-label col-sm-4" title="">
-								<span class="required ">*</span> ${text('create_time')}：<i class="fa icon-question hide"></i></label>
-							<div class="col-sm-8">
-								<#form:input path="createDate" class="form-control required"/>
+								<#form:fileupload id="imgUrl" bizKey="${bizSkuInfo.id}" bizType="bizSkuInfo_imgUrl"
+								uploadType="image" returnPath="true" class="required" readonly="false"/>
 							</div>
 						</div>
 					</div>
@@ -102,3 +83,4 @@ $("#inputForm").validate({
     }
 });
 </script>
+<!--<script src="${ctxStatic}/webuploader/0.1/webuploader.js?${_version}"></script>-->

@@ -9,9 +9,9 @@ import com.jeesite.common.mybatis.annotation.JoinTable;
 import com.jeesite.common.mybatis.annotation.JoinTable.Type;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.jeesite.modules.sys.entity.User;
-import com.lianzhu.modules.sys.entity.Office;
+import com.baimeng.modules.sys.entity.Office;
 import java.util.List;
-import com.lianzhu.common.collect.ListUtils;
+import com.baimeng.common.collect.ListUtils;
 
 import com.jeesite.common.entity.DataEntity;
 import com.jeesite.common.mybatis.annotation.Column;

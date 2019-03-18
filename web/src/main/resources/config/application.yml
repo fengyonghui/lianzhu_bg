@@ -22,7 +22,7 @@ server:
 
   port: 8980
   servlet:
-    context-path: /lz
+    context-path: /bm
   tomcat:
     uri-encoding: UTF-8
     
@@ -36,9 +36,9 @@ jdbc:
   # Mysql 数据库配置
   type: mysql
   driver: com.mysql.jdbc.Driver
-  url: jdbc:mysql://192.168.1.213:3306/lianzhu?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+  url: jdbc:mysql://localhost:3306/baimeng?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
   username: root
-  password: wanhutong
+  password: mysql
   testSql: SELECT 1
 
 #  # Oracle 数据库配置
@@ -482,8 +482,8 @@ logging:
 #file:
 #  enabled: true
 #
-#  # 文件上传根路径，设置路径中不允许包含“userfiles”，在指定目录中系统会自动创建userfiles目录，如果不设置默认为contextPath路径
-##  baseDir: D:/jeesite
+#  # 文件上传根路径，设置路径中不允许包含“userfiles222”，在指定目录中系统会自动创建userfiles目录，如果不设置默认为contextPath路径
+ # baseDir: D:/jeesite
 #
 #  # 上传文件的相对路径（支持：yyyy, MM, dd, HH, mm, ss, E）
 #  uploadPath: '{yyyy}{MM}/'

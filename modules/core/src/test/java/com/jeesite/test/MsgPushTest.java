@@ -14,7 +14,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 
 import com.jeesite.common.config.Global;
-import com.lianzhu.common.lang.DateUtils;
+import com.baimeng.common.lang.DateUtils;
 import com.jeesite.common.tests.BaseSpringContextTests;
 import com.jeesite.modules.msg.entity.MsgTemplate;
 import com.jeesite.modules.msg.entity.content.AppMsgContent;

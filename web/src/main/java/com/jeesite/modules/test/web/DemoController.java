@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.lianzhu.common.lang.StringUtils;
+import com.baimeng.common.lang.StringUtils;
 import com.jeesite.common.web.BaseController;
 import com.jeesite.modules.test.entity.TestData;
 import com.jeesite.modules.test.service.TestDataService;
